@@ -11,3 +11,8 @@ use uv package manager
 uv add langchain --dev
 
 uv add langchain-openai
+
+black . (to format the code)
+
+isort .
+
