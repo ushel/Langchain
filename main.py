@@ -3,6 +3,10 @@ import os
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_openai import ChatOpenAI
+from langchain_ollama import ChatOllama
+
+
+
 
 # List of messages 1. System message, 2. Human message, 3. AI message
 
@@ -49,6 +53,11 @@ def main():
     llm = ChatOpenAI(
         temperature=0, model="gpt-5"
     )  # temperature = 0.0-0.3 deterministic, factual and repeatable and good for summarization, code, instruction or test
+    # temperature = 0.8-1.0  give us very creative results good for poetry, fiction, out-of-the box ideas
+    
+    # llm = ChatOllama(
+    #     temperature=0, model="gemma3:270m"
+    # )  # temperature = 0.0-0.3 deterministic, factual and repeatable and good for summarization, code, instruction or test
     # temperature = 0.8-1.0  give us very creative results good for poetry, fiction, out-of-the box ideas
 
     chain = (
