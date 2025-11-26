@@ -64,7 +64,7 @@ def main():
         summary_prompt_template | llm
     )  # | operator will create a runnable chain by connecting the output of left component as an input to right component
     response = chain.invoke(input={"information": information})
-    print(response.content)
+    # print(response.content)
 
 
 if __name__ == "__main__":
