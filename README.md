@@ -1,9 +1,11 @@
-WE are using langchain-tavily 
+tavily is most popular choice for integrating websearch into an agent 
 
-when we trace using langsmith we can see multiple function calling because gpt-5 supports multiple function calling 
+model dose not execute the tool itself, it only produces the argument for tool call
 
-final request to llm consist of all the tools calls an their answers pass to the llm to get the final answer.
+system running langchain will execute the tool and propogate back the output to the model
 
-structure output:- 
+how the llm know how tool to you and when to call tool.
 
-using response format in create_agent function.
+usually tool description given in the tool will tell llm what the tool is doing so it will know when to use it.
+
+and in that llm call we will also provide what arguments does the call receive(name, arguments).
